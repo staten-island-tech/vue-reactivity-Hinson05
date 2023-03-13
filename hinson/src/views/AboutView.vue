@@ -13,15 +13,8 @@ function toggle() {
   <div class="about">
     <h2>count is: {{ count }}</h2>
   </div>
-  <button @click="toggle">purchase</button>
+  <button v-if="awesome" @click="toggle">purchase</button>
   <h1 v-if="awesome">Add item to cart</h1>
   <h1 v-else>Item Added</h1>
 </template>
-<style>
-@media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    align-items: center;
-  }
-}
-</style>
+<style></style>
