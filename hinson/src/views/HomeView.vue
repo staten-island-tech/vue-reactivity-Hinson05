@@ -1,34 +1,35 @@
 <script>
+// give each todo a unique id
+let id = 0;
+
 export default {
   data() {
     return {
-      todoId: 1,
-      todoData: null,
+      newTodo: "",
+      todos: [],
     };
   },
   methods: {
-    async fetchData() {
-      this.todoData = null;
-      const res = await fetch(
-        `https://www.balldontlie.io/api/v1/players/${this.todoId}`
-      );
-      this.todoData = await res.json();
+    addTodo() {
+      this.todos.push({ id: id++, text: this.newTodo });
+      this.newTodo = "";
     },
-  },
-  mounted() {
-    this.fetchData();
-  },
-  watch: {
-    todoId() {
-      this.fetchData();
+    removeTodo(todo) {
+      this.todos = this.todos.filter((t) => t !== todo);
     },
   },
 };
 </script>
 
 <template>
-  <p>Todo id: {{ todoId }}</p>
-  <button @click="todoId++">Fetch next todo</button>
-  <p v-if="!todoData">Loading...</p>
-  <pre v-else>{{ todoData }}</pre>
+  <form @submit.prevent="addTodo">
+    <input v-model="newTodo" />
+    <button>Add Todo</button>
+  </form>
+  <ul>
+    <li v-for="todo in todos" :key="todo.id">
+      {{ todo.text }}
+      <button @click="removeTodo(todo)">X</button>
+    </li>
+  </ul>
 </template>

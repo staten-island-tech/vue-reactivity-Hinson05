@@ -17,9 +17,8 @@ import { RouterLink, RouterView } from "vue-router";
       <h1>Shop NBA Jerseys</h1>
 
       <nav>
-        <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">Shop</RouterLink>
-        <RouterLink to="/InView">Cart</RouterLink>
+        <RouterLink to="/">Cart</RouterLink>
       </nav>
     </div>
   </header>
