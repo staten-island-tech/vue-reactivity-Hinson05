@@ -5,8 +5,8 @@ const awesome = ref(true);
 const count = ref(0);
 
 function toggle() {
-  awesome.value = !awesome.value;
   count.value++;
+  awesome.value = !bleh.value;
 }
 </script>
 <script>
@@ -48,9 +48,6 @@ export default {
       {{ count }}
     </h2>
   </div>
-  <button v-if="awesome" @click="toggle">purchase</button>
-  <h1 v-if="awesome">Add item to cart</h1>
-  <h1 v-else>Item Added</h1>
   <div>
     <p>Player: {{ todoId }}</p>
     <button @click="todoId++">Next Player</button>
@@ -61,5 +58,6 @@ export default {
       }} )</pre
     >
   </div>
+  <button v-if="awesome" @click="toggle" id="button">purchase</button>
 </template>
 <style></style>
