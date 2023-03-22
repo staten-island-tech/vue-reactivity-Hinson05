@@ -7,14 +7,14 @@ import { RouterLink, RouterView } from "vue-router";
   <header>
     <img
       id="logo"
-      src="https://logolook.net/wp-content/uploads/2021/06/Nba-Logo.png"
+      src="https://th.bing.com/th/id/OIP.h1t-m8AH-9KSwHCslzXvagHaFj?w=240&h=180&c=7&r=0&o=5&pid=1.7"
       width="250"
       height="150"
     />
 
     <div class="wrapper">
-      <HelloWorld msg="Shop NBA Jerseys" />
-      <h1>Shop NBA Jerseys</h1>
+      <HelloWorld msg="Book Store" />
+      <h1>Book Store</h1>
 
       <nav>
         <RouterLink to="/about">Shop</RouterLink>

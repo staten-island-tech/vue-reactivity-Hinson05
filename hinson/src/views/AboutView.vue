@@ -9,33 +9,23 @@ function toggle() {
   awesome.value = !bleh.value;
 }
 </script>
-<script>
+
+<!-- <script>
 export default {
   data() {
     return {
-      todoId: 1,
-      todoData: null,
+      selected: "",
+      destinations: [
+        {
+          name: "The Great Gatsby",
+          price: 40,
+          img: "https://cdn.onlinewebfonts.com/svg/img_208967.png",
+        },
+      ],
     };
   },
-  methods: {
-    async fetchData() {
-      this.todoData = null;
-      const res = await fetch(
-        `https://www.balldontlie.io/api/v1/players/${this.todoId}`
-      );
-      this.todoData = await res.json();
-    },
-  },
-  mounted() {
-    this.fetchData();
-  },
-  watch: {
-    todoId() {
-      this.fetchData();
-    },
-  },
 };
-</script>
+</script> -->
 <template>
   <div class="shop">
     <h2>
@@ -48,16 +38,7 @@ export default {
       {{ count }}
     </h2>
   </div>
-  <div>
-    <p>Player: {{ todoId }}</p>
-    <button @click="todoId++">Next Player</button>
-    <p v-if="!todoData">Loading...</p>
-    <pre v-else
-      >{{ todoData.first_name }} {{ todoData.last_name }} ( {{
-        todoData.team.full_name
-      }} )</pre
-    >
-  </div>
+  <div class="card"></div>
   <button v-if="awesome" @click="toggle" id="button">purchase</button>
 </template>
 <style></style>
