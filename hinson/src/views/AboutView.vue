@@ -38,7 +38,33 @@ export default {
       {{ count }}
     </h2>
   </div>
-  <div class="card"></div>
-  <button v-if="awesome" @click="toggle" id="button">purchase</button>
+  <div class="card">
+    <h2 class="text">Title: The Great Gatsby</h2>
+    <h3 class="text">Price: $40</h3>
+    <img
+      id="image"
+      src="https://media.newyorker.com/photos/5909527c019dfc3494e9defe/master/w_2560%2Cc_limit/Gatsby_1925-290.jpg"
+      width="150"
+      height="150"
+    />
+    <button v-if="awesome" @click="toggle" id="buttonone" class="button">
+      purchase
+    </button>
+  </div>
 </template>
-<style></style>
+<style>
+.card {
+  border: 2px solid black;
+  width: 300px;
+  height: 300px;
+}
+.text {
+  text-align: center;
+}
+.image {
+  align-items: center;
+}
+.button {
+  align-items: center;
+}
+</style>
