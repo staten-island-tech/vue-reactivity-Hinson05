@@ -8,6 +8,11 @@ function toggle() {
   count.value++;
   awesome.value = !bleh.value;
 }
+
+function add() {
+  price.value + 40;
+  point.value = !idk.value;
+}
 </script>
 
 <!-- <script>
