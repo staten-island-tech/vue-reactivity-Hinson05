@@ -2,16 +2,13 @@
 import { ref } from "vue";
 
 const awesome = ref(true);
+const point = ref(0);
 const count = ref(0);
 
 function toggle() {
-  count.value++;
+  count.value += 40;
   awesome.value = !bleh.value;
-}
-
-function add() {
-  price.value + 40;
-  point.value = !idk.value;
+  point.value++;
 }
 </script>
 
@@ -40,8 +37,9 @@ export default {
         width="35"
         height="35"
       />
-      {{ count }}
+      {{ point }}
     </h2>
+    <h3>Price: {{ count }}</h3>
   </div>
   <div class="card">
     <h2 class="text">Title: The Great Gatsby</h2>
