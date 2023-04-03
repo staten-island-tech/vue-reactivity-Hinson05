@@ -1,11 +1,14 @@
 <script setup>
 import { ref } from "vue";
 
-const awesome = ref(true);
+const point = ref(0);
 const count = ref(0);
+const cart = ref([]);
 
 function toggle() {
   count.value++;
+  point.value += 150;
+  cart.push();
 }
 </script>
 <script>
@@ -46,17 +49,33 @@ export default {
       />
       {{ count }}
     </h2>
+    <h3>Cost: ${{ point }}</h3>
   </div>
-  <div>
+  <div id="idk">
     <p>Player: {{ todoId }}</p>
     <button @click="todoId++">Next Player</button>
     <p v-if="!todoData">Loading...</p>
     <pre v-else
       >{{ todoData.first_name }} {{ todoData.last_name }} ( {{
         todoData.team.full_name
-      }} )</pre
+      }} ) 
+      Price : $150</pre
     >
+    <button @click="toggle" id="button">purchase</button>
   </div>
-  <button v-if="awesome" @click="toggle" id="button">purchase</button>
+  <div id="cart">
+    <h1>Cart</h1>
+    <li></li>
+  </div>
 </template>
-<style></style>
+<style>
+#button {
+  width: 400px;
+  height: 100px;
+}
+#idk {
+  border: solid 5px black;
+  width: 500px;
+  height: 500px;
+}
+</style>
