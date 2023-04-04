@@ -65,7 +65,10 @@ export default {
   </div>
   <div id="cart">
     <h1>Cart</h1>
-    <li></li>
+    <li>{{ todoData.first_name }} {{ todoData.last_name }} ( {{
+        todoData.team.full_name
+      }} ) 
+      Price : $150</li>
   </div>
 </template>
 <style>
