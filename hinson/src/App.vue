@@ -13,8 +13,8 @@ import { RouterLink, RouterView } from "vue-router";
     />
 
     <div class="wrapper">
-      <HelloWorld msg="Book Store" />
-      <h1>Book Store</h1>
+      <HelloWorld msg=" " />
+      <h1>NBA Jersey</h1>
 
       <nav>
         <RouterLink to="/about">Shop</RouterLink>

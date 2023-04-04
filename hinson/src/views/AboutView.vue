@@ -3,12 +3,10 @@ import { ref } from "vue";
 
 const point = ref(0);
 const count = ref(0);
-const cart = ref([]);
 
 function toggle() {
   count.value++;
   point.value += 150;
-  cart.push();
 }
 </script>
 <script>
