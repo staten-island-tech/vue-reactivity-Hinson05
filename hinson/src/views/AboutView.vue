@@ -13,24 +13,24 @@ function toggle() {
 export default {
   data() {
     return {
-      todoId: 1,
-      todoData: null,
+      playerId: 1,
+      playerData: null,
     };
   },
   methods: {
     async fetchData() {
-      this.todoData = null;
+      this.playerData = null;
       const res = await fetch(
-        `https://www.balldontlie.io/api/v1/players/${this.todoId}`
+        `https://www.balldontlie.io/api/v1/players/${this.playerId}`
       );
-      this.todoData = await res.json();
+      this.playerData = await res.json();
     },
   },
   mounted() {
     this.fetchData();
   },
   watch: {
-    todoId() {
+    playerId() {
       this.fetchData();
     },
   },
@@ -50,12 +50,12 @@ export default {
     <h3>Cost: ${{ point }}</h3>
   </div>
   <div id="idk">
-    <p>Player: {{ todoId }}</p>
-    <button @click="todoId++">Next Player</button>
-    <p v-if="!todoData">Loading...</p>
+    <p>Player: {{ playerId }}</p>
+    <button @click="playerId++">Next Player</button>
+    <p v-if="!playerData">Loading...</p>
     <pre v-else
-      >{{ todoData.first_name }} {{ todoData.last_name }} ( {{
-        todoData.team.full_name
+      >{{ playerData.first_name }} {{ playerData.last_name }} ( {{
+        playerData.team.full_name
       }} ) 
       Price : $150</pre
     >
@@ -63,12 +63,7 @@ export default {
   </div>
   <div id="cart">
     <h1>Cart</h1>
-    <ul>
-      <li>
-        {{ todoData.first_name }} {{ todoData.last_name }} (
-        {{ todoData.team.full_name }} ) Price : $150
-      </li>
-    </ul>
+    <h3></h3>
   </div>
 </template>
 <style>
