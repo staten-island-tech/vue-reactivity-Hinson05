@@ -13,6 +13,10 @@ function toggletwo() {
   count.value += 12;
   point.value++;
   console.log("Leaves of Grass");
+  DOMSelectors.cart.insertAdjacentHTML(
+    "afterend",
+    `<p id="results">Leaves of Grass</p>`
+  );
 }
 function togglethree() {
   count.value += 13;
